@@ -12,8 +12,8 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        vector<int> l;
         ListNode *output=new ListNode();
+        ListNode *ans=output;
         int bit=0;
         int out;
         int flag;
@@ -46,15 +46,14 @@ public:
             }
             if(flag!=1){
                 if(out!=0){
-                    l.push_back(out);
+                    ListNode *next=new ListNode(out);
+                    ans->next=next;
                 }
-                for(int i=l.size();i>0;--i){
-                    ListNode *next=new ListNode(l[i-1], output->next);
-                    output->next=next;
-                } 
                 return output->next;
             }
-            l.push_back(out);
+            ListNode *next=new ListNode(out);
+            ans->next=next;
+            ans=next;
         }
     }
 };
