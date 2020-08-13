@@ -34,3 +34,7 @@ func inorderTraversal(root *TreeNode) []int {
     result = append(result, root.Val)
     return append(result, inorderTraversal(root.Right)...)
 }
+
+//GO 有指针操作 & *
+
+// ...将切片打散传入
