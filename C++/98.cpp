@@ -24,7 +24,7 @@ public:
     }
 
     bool isValidBST(TreeNode* root) {
-        return helper(root, -0x7fffffffffffffff , 0x7fffffffffffffff);
+        return helper(root, LONG_MIN , LONG_MAX);
     }
 };
 
@@ -32,3 +32,7 @@ public:
 // 除了判断根与左右的大小，还要判断根是否在指定范围内（比如左子树中的右子树大于次根，不一定小于总根）
 
 // 0xffffffffffffffff = -1 淦！！竟然忘了
+
+
+//solution2 中序遍历，看是否有序
+//实现见GO方式
